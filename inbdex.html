@@ -3,51 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For My Sister Radhika ❤️</title>
+<title>My Sister Radhika ❤️</title>
 
 <style>
 body{
     margin:0;
     padding:0;
     font-family:Arial, sans-serif;
-    background:linear-gradient(to bottom,#1e3c72,#2a5298);
+    background:radial-gradient(circle at top,#141e30,#090a0f);
     color:white;
     text-align:center;
-    overflow-x:hidden;
+    overflow:hidden;
 }
 
-/* title */
+/* animated title */
 h1{
     margin-top:40px;
-    font-size:50px;
-    color:#ffd1dc;
-    text-shadow:0 0 20px pink;
-    animation:glow 2s infinite alternate;
+    font-size:55px;
+    background:linear-gradient(90deg,#ff9a9e,#fad0c4,#ff9a9e);
+    background-size:200%;
+    -webkit-background-clip:text;
+    color:transparent;
+    animation:shine 4s linear infinite;
 }
-@keyframes glow{
-    from{text-shadow:0 0 10px #fff;}
-    to{text-shadow:0 0 30px pink;}
-}
-
-/* letter box */
-.letter{
-    width:80%;
-    margin:40px auto;
-    padding:35px;
-    border-radius:20px;
-    background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(8px);
-    box-shadow:0 0 25px rgba(255,255,255,0.3);
-    line-height:1.8;
-    font-size:19px;
-    animation:updown 3s ease-in-out infinite alternate;
-}
-@keyframes updown{
-    from{transform:translateY(0);}
-    to{transform:translateY(-15px);}
+@keyframes shine{
+    0%{background-position:0%;}
+    100%{background-position:200%;}
 }
 
-/* hearts animation */
+/* floating hearts */
 .heart{
     position:fixed;
     bottom:-10px;
@@ -58,66 +42,103 @@ h1{
     100%{transform:translateY(-900px);opacity:0;}
 }
 
+/* stars */
+.star{
+    position:fixed;
+    width:2px;
+    height:2px;
+    background:white;
+    animation:twinkle 2s infinite alternate;
+}
+@keyframes twinkle{
+    from{opacity:0.3;}
+    to{opacity:1;}
+}
+
+/* letter box */
+.box{
+    width:75%;
+    margin:50px auto;
+    padding:35px;
+    border-radius:25px;
+    background:rgba(255,255,255,0.06);
+    backdrop-filter:blur(8px);
+    box-shadow:0 0 40px rgba(255,105,180,0.5);
+    animation:updown 3s ease-in-out infinite alternate;
+}
+@keyframes updown{
+    from{transform:translateY(0);}
+    to{transform:translateY(-20px);}
+}
+
+/* typing */
+.typing{
+    font-size:26px;
+    border-right:3px solid white;
+    width:0;
+    overflow:hidden;
+    white-space:nowrap;
+    margin:auto;
+    animation:typing 6s steps(40,end) forwards, blink 1s infinite;
+}
+@keyframes typing{
+    from{width:0;}
+    to{width:100%;}
+}
+@keyframes blink{
+    50%{border-color:transparent;}
+}
+
 /* button */
 button{
     padding:15px 30px;
     font-size:18px;
     border:none;
     border-radius:30px;
-    background:#ffd1dc;
-    color:#333;
+    background:#ff7eb3;
+    color:white;
     cursor:pointer;
-    margin-top:20px;
+    margin-top:25px;
 }
 button:hover{
     background:white;
+    color:#ff7eb3;
 }
 </style>
 </head>
 
 <body>
 
-<h1>For My Elder Sister Radhika ❤️</h1>
+<h1>My Lovely Sister Radhika ❤️</h1>
 
-<div class="letter">
-<p>Dear Radhika Didi,</p>
+<div class="box">
+<div class="typing">Best Sister in the World 💖</div>
 
-<p>
-You are not just my sister, you are my guide, my protector, and my best friend. From childhood until today, you have always been there for me in every moment of life. As my elder sister, you have always taken care of me like a second mother and supported me whenever I needed someone by my side.
+<p style="margin-top:25px;font-size:20px;line-height:1.8;">
+Dear Radhika Didi,  
+You are not only my elder sister but also my second mother, my guide and my best friend.  
+Your love, care and support make my life beautiful every day.  
+
+Thank you for always standing with me, protecting me and guiding me.  
+I feel lucky to have such a wonderful and loving sister like you.  
+
+No matter where life takes us, you will always be my strongest support and my forever family.  
+I pray that you always stay happy, successful and smiling.  
+
+I love you so much didi ❤️
 </p>
 
-<p>
-I still remember how you helped me in my studies, guided me when I was confused, and stood beside me when I felt alone. Your words always gave me strength and your presence always gave me comfort. You taught me how to stay strong in difficult times and how to face life with confidence and courage.
-</p>
-
-<p>
-You have sacrificed so much for our family and always put our happiness before your own. Your kindness, patience, and loving nature make you one of the most special people in my life. I feel truly lucky and blessed to have such an amazing elder sister like you.
-</p>
-
-<p>
-No matter how much we grow or how busy life becomes, you will always remain my first friend and my forever support system. I promise to always respect you, care for you, and stand with you just like you have always stood with me.
-</p>
-
-<p>
-Thank you for being my inspiration, my strength, and my lovely sister. I pray that you always stay happy, healthy, and successful in life. May all your dreams come true and may your life always be filled with love and joy.
-</p>
-
-<p>
-With lots of love and respect,  
-Your younger sibling ❤️
-</p>
+<button onclick="surprise()">Click Here Didi 💌</button>
+<h2 id="msg"></h2>
 </div>
 
-<button onclick="msg()">Click Here Didi 💌</button>
-<h2 id="text"></h2>
-
 <script>
-function msg(){
-document.getElementById("text").innerHTML=
-"Radhika Didi ❤️ You are the best sister in the world!";
+function surprise(){
+document.getElementById("msg").innerHTML=
+"Radhika Didi ❤️ You are my pride, my strength and my forever support!";
 }
 
-/* floating hearts */
+/* hearts */
 setInterval(()=>{
 let heart=document.createElement("div");
 heart.className="heart";
@@ -125,8 +146,17 @@ heart.innerHTML="💖";
 heart.style.left=Math.random()*100+"vw";
 heart.style.fontSize=(Math.random()*20+20)+"px";
 document.body.appendChild(heart);
-setTimeout(()=>{heart.remove();},6000);
+setTimeout(()=>heart.remove(),6000);
 },300);
+
+/* stars */
+for(let i=0;i<120;i++){
+let star=document.createElement("div");
+star.className="star";
+star.style.left=Math.random()*100+"vw";
+star.style.top=Math.random()*100+"vh";
+document.body.appendChild(star);
+}
 </script>
 
 </body>
